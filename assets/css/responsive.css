@@ -1,0 +1,510 @@
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 1024px) {
+
+  .section {
+    padding: 88px 24px;
+  }
+
+  .hero {
+    padding: 54px 24px 88px;
+  }
+
+  .hero-inner {
+    min-height: auto;
+    grid-template-columns: 1fr 0.9fr;
+    gap: 42px;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 7vw, 5rem);
+  }
+
+  .about-home,
+  .skills-home,
+  .contact-home {
+    gap: 40px;
+  }
+
+  .skills-home-main {
+    padding: 36px;
+  }
+
+  .contact-home {
+    padding: 44px;
+  }
+
+}
+
+
+/* =========================
+   Mobile / Small Tablet
+========================= */
+
+@media (max-width: 768px) {
+
+  body {
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+
+  .pc-only {
+    display: none;
+  }
+
+
+  /* =========================
+     Header
+  ========================= */
+
+  .header-inner {
+    width: min(calc(100% - 28px), var(--max-width));
+    min-height: 66px;
+  }
+
+  .site-logo-name {
+    font-size: 0.92rem;
+  }
+
+  .site-logo-role {
+    font-size: 0.62rem;
+  }
+
+  .global-nav {
+    position: fixed;
+    top: 66px;
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    background: rgba(250, 247, 242, 0.98);
+    border-bottom: 1px solid var(--color-border);
+    transition:
+      max-height 0.3s ease,
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+  }
+
+  .global-nav.is-open {
+    max-height: 420px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .global-nav-list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 18px 22px 26px;
+  }
+
+  .global-nav-list li {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .global-nav-list li:last-child {
+    border-bottom: none;
+  }
+
+  .global-nav-list a {
+    padding: 14px 4px;
+  }
+
+  .global-nav-list a::after {
+    display: none;
+  }
+
+  .nav-en {
+    font-size: 0.82rem;
+  }
+
+  .nav-ja {
+    font-size: 0.68rem;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .menu-button span {
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+  }
+
+  .menu-button.is-open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menu-button.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-button.is-open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+
+  /* =========================
+     Common
+  ========================= */
+
+  .section {
+    padding: 68px 18px;
+  }
+
+  .section-heading {
+    margin-bottom: 26px;
+  }
+
+  .section-heading-en {
+    margin-bottom: 4px;
+    font-size: 0.72rem;
+  }
+
+  .section-heading-ja {
+    font-size: 2rem;
+  }
+
+  .section-intro {
+    margin: -6px 0 34px;
+    font-size: 0.94rem;
+  }
+
+  .section-more {
+    margin-top: 32px;
+  }
+
+  .text-link {
+    font-size: 0.92rem;
+  }
+
+
+  /* =========================
+     Hero
+  ========================= */
+
+  .hero {
+    padding: 34px 18px 70px;
+  }
+
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .hero-content {
+    width: 100%;
+    order: 1;
+  }
+
+  .hero-visual {
+    width: 100%;
+    order: 2;
+    margin-top: 4px;
+  }
+
+  .hero-label {
+    margin-bottom: 12px;
+    font-size: 0.68rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.9rem, 13vw, 4.3rem);
+    line-height: 1.1;
+  }
+
+  .hero-profile {
+    margin-top: 22px;
+  }
+
+  .hero-name {
+    font-size: 1.08rem;
+  }
+
+  .hero-role {
+    font-size: 0.9rem;
+  }
+
+  .hero-description {
+    margin-top: 20px;
+    font-size: 0.94rem;
+    line-height: 1.85;
+  }
+
+  .hero-actions {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+    min-height: 50px;
+  }
+
+  .hero-image-frame {
+    width: min(88vw, 390px);
+    padding: 18px;
+  }
+
+  .hero-image-frame::before {
+    width: 82px;
+    height: 82px;
+    top: -16px;
+    right: 4px;
+  }
+
+  .hero-image-frame::after {
+    width: 50px;
+    height: 50px;
+    left: -8px;
+    bottom: 18px;
+  }
+
+
+  /* =========================
+     About
+  ========================= */
+
+  .about-home {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .about-home-lead {
+    font-size: 1.28rem;
+    line-height: 1.7;
+  }
+
+  .about-home-text {
+    margin-top: 22px;
+    font-size: 0.94rem;
+  }
+
+  .interest-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .interest-item {
+    min-height: 100px;
+    padding: 16px;
+  }
+
+  .interest-icon {
+    font-size: 1.55rem;
+  }
+
+  .interest-name {
+    font-size: 0.72rem;
+  }
+
+
+  /* =========================
+     Works
+  ========================= */
+
+  .works-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .work-card {
+    border-radius: 20px;
+  }
+
+  .work-card-image {
+    padding: 14px;
+  }
+
+  .work-card-body {
+    padding: 22px;
+  }
+
+  .work-card-category {
+    font-size: 0.68rem;
+  }
+
+  .work-card-title {
+    font-size: 1.45rem;
+  }
+
+  .work-card-description {
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+
+  .tag-list {
+    margin-top: 18px;
+  }
+
+  .tag-list li {
+    font-size: 0.68rem;
+    padding: 5px 10px;
+  }
+
+  .work-card-more {
+    margin-top: 20px;
+    font-size: 0.9rem;
+  }
+
+
+  /* =========================
+     Skills
+  ========================= */
+
+  .skills-home {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .skills-home-main {
+    padding: 28px 22px;
+    background: #5f463a;
+    border-radius: 20px;
+  }
+
+  .skills-home-label {
+    font-size: 0.7rem;
+  }
+
+  .skills-home-title {
+    font-size: 1.8rem;
+  }
+
+  .skills-home-tech {
+    font-size: 0.9rem;
+  }
+
+  .skills-home-description {
+    margin-top: 22px;
+    font-size: 0.92rem;
+    line-height: 1.85;
+  }
+
+  .skills-home-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .skill-summary {
+    padding: 18px;
+  }
+
+  .skill-summary-title {
+    font-size: 0.7rem;
+  }
+
+  .skill-summary-text {
+    font-size: 0.88rem;
+  }
+
+
+  /* =========================
+     Contact
+  ========================= */
+
+  .contact-home {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 30px 22px;
+    border-radius: 22px;
+  }
+
+  .contact-home-title {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+    line-height: 1.35;
+  }
+
+  .contact-home-description {
+    font-size: 0.94rem;
+  }
+
+  .work-style-list {
+    margin: 22px 0 28px;
+    gap: 10px;
+    font-size: 0.92rem;
+  }
+
+  .contact-home .button {
+    width: 100%;
+  }
+
+
+  /* =========================
+     Footer
+  ========================= */
+
+  .site-footer {
+    padding: 40px 18px 22px;
+  }
+
+  .footer-nav {
+    margin-top: 26px;
+  }
+
+  .footer-nav ul {
+    gap: 16px 18px;
+  }
+
+  .footer-nav a {
+    font-size: 0.76rem;
+  }
+
+  .footer-bottom {
+    margin-top: 32px;
+    padding-top: 20px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-github {
+    font-size: 0.9rem;
+  }
+
+}
+
+
+/* =========================
+   Small Mobile
+========================= */
+
+@media (max-width: 520px) {
+
+  .hero {
+    padding-top: 28px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.6rem, 14vw, 3.7rem);
+  }
+
+  .hero-image-frame {
+    width: min(92vw, 360px);
+  }
+
+  .interest-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skills-home-list {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-home {
+    padding: 28px 20px;
+  }
+
+  .button {
+    min-height: 49px;
+    padding: 0 20px;
+  }
+
+}
