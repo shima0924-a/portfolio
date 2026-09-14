@@ -4,14 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>嶋田 綾音 | Webエンジニア</title>
+  <title>嶋田 綾音 | Webエンジニア ポートフォリオ</title>
   <meta
     name="description"
-    content="PHPを中心としたWeb開発を得意とするWebエンジニア、嶋田綾音のポートフォリオサイトです。個人ではFlutterやAndroidアプリの開発も行っています。"
+    content="PHPを中心としたWebバックエンド開発を得意とするWebエンジニア、嶋田綾音のポートフォリオサイトです。実務経験や個人開発、スキルをご紹介しています。"
   >
+  <meta name="robots" content="index, follow">
 
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/responsive.css">
+
+  <style>
+    .about-home-interests {
+      margin: 36px 0 0;
+    }
+
+    .about-home-interests-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 24px;
+      object-fit: cover;
+      box-shadow: 0 14px 36px rgba(73, 54, 44, 0.08);
+    }
+
+    @media (max-width: 768px) {
+      .about-home-interests {
+        margin-top: 28px;
+      }
+
+      .about-home-interests-image {
+        border-radius: 18px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -22,12 +48,12 @@
   <header class="site-header">
     <div class="header-inner">
 
-      <a href="./" class="site-logo">
+      <a href="./" class="site-logo" aria-label="嶋田綾音 ポートフォリオ ホーム">
         <span class="site-logo-name">嶋田 綾音</span>
         <span class="site-logo-role">Web Engineer</span>
       </a>
 
-      <nav class="global-nav" aria-label="メインナビゲーション">
+      <nav id="global-navigation" class="global-nav" aria-label="メインナビゲーション">
         <ul class="global-nav-list">
           <li>
             <a href="./about/">
@@ -64,6 +90,7 @@
         type="button"
         aria-label="メニューを開く"
         aria-expanded="false"
+        aria-controls="global-navigation"
       >
         <span></span>
         <span></span>
@@ -97,8 +124,8 @@
           </div>
 
           <p class="hero-description">
-            PHPを中心としたWeb開発を得意としています。<br>
-            個人ではFlutterやAndroidアプリなど、<br class="pc-only">
+            PHPを中心としたWebバックエンド開発を得意としています。<br>
+            個人ではFlutterを使ったAndroidアプリなど、<br class="pc-only">
             「自分が欲しいもの」を中心に開発しています。
           </p>
 
@@ -116,19 +143,13 @@
 
         <div class="hero-visual">
           <div class="hero-image-frame">
-
-            <!--
-              後で仕事用アイコンを
-              assets/images/common/profile-main.png
-              に保存したら表示されます。
-            -->
-
             <img
               src="./assets/images/common/profile-main.png"
               alt="嶋田綾音の仕事用アイコン"
               class="hero-image"
+              decoding="async"
+              fetchpriority="high"
             >
-
           </div>
         </div>
 
@@ -156,41 +177,27 @@
             </p>
 
             <p class="about-home-text">
-              高校卒業後は飲食店に勤務し、その後プログラミングを
-              独学と職業訓練で学び、エンジニアになりました。
+              高校卒業後は飲食店の社員として勤務し、
+              その後プログラミングを独学と職業訓練で学び、エンジニアになりました。
               PHPを中心としたバックエンド開発を軸に、
               フロントエンドやアプリ開発にも取り組んでいます。
             </p>
+
+            <p class="about-home-text">
+              関東在住時にはWebエンジニアとして働きながら、
+              土日はプログラミング塾で約1年間、Scratch・Pythonの指導も担当しました。
+            </p>
           </div>
 
-          <div class="interest-list">
-
-            <div class="interest-item">
-              <span class="interest-icon">🎮</span>
-              <span class="interest-name">GAME</span>
-            </div>
-
-            <div class="interest-item">
-              <span class="interest-icon">🎹</span>
-              <span class="interest-name">PIANO</span>
-            </div>
-
-            <div class="interest-item">
-              <span class="interest-icon">🧵</span>
-              <span class="interest-name">HANDMADE</span>
-            </div>
-
-            <div class="interest-item">
-              <span class="interest-icon">🍚</span>
-              <span class="interest-name">FOOD</span>
-            </div>
-
-            <div class="interest-item">
-              <span class="interest-icon">💻</span>
-              <span class="interest-name">DEVELOPMENT</span>
-            </div>
-
-          </div>
+          <figure class="about-home-interests">
+            <img
+              src="./assets/images/common/interests.png"
+              alt="ゲーム、ピアノ、焼肉などのおいしいもの、レジンやスワロフスキーを使ったアクセサリー制作、Web・アプリ開発、シソとバジル栽培など、好きなものをまとめたイラスト"
+              class="about-home-interests-image"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
 
         </div>
 
@@ -221,24 +228,34 @@
           個人で開発しています。
         </p>
 
-        <div class="works-grid">
+        <div class="home-works-list">
 
           <!-- BodyLog -->
-          <article class="work-card">
-            <a href="./works/bodylog/" class="work-card-link">
-
-              <div class="work-card-image">
-                <div class="work-card-placeholder">
-                  BodyLog Screenshot
-                </div>
+          <article class="home-work-item">
+            <a
+              href="./works/bodylog/"
+              class="home-work-link"
+              aria-label="BodyLogの詳細を見る"
+            >
+              <div class="home-work-icon-wrap">
+                <img
+                  src="./assets/images/bodylog/bodylog-icon.png"
+                  alt="BodyLog アプリアイコン"
+                  class="home-work-icon"
+                  width="180"
+                  height="180"
+                  loading="lazy"
+                  decoding="async"
+                >
               </div>
 
-              <div class="work-card-body">
+              <div class="home-work-content">
                 <p class="work-card-category">MOBILE APP</p>
 
-                <h3 class="work-card-title">
-                  BodyLog
-                </h3>
+                <div class="home-work-title-row">
+                  <h3 class="work-card-title">BodyLog</h3>
+                  <span class="home-work-arrow" aria-hidden="true">↗</span>
+                </div>
 
                 <p class="work-card-description">
                   体重だけではなく、体型の変化まで記録・比較できる
@@ -251,47 +268,51 @@
                   <li>Android</li>
                 </ul>
 
-                <span class="work-card-more">
-                  詳しく見る →
-                </span>
+                <span class="work-card-more">詳しく見る →</span>
               </div>
-
             </a>
           </article>
 
-
           <!-- Brawl Watch -->
-          <article class="work-card">
-            <a href="./works/brawl-watch/" class="work-card-link">
-
-              <div class="work-card-image">
-                <div class="work-card-placeholder">
-                  Brawl Watch Screenshot
-                </div>
+          <article class="home-work-item">
+            <a
+              href="./works/brawl-watch/"
+              class="home-work-link"
+              aria-label="Brawl Watchの詳細を見る"
+            >
+              <div class="home-work-icon-wrap">
+                <img
+                  src="./assets/images/brawl-watch/icon.png"
+                  alt="Brawl Watch アプリアイコン"
+                  class="home-work-icon"
+                  width="180"
+                  height="180"
+                  loading="lazy"
+                  decoding="async"
+                >
               </div>
 
-              <div class="work-card-body">
+              <div class="home-work-content">
                 <p class="work-card-category">PERSONAL DEVELOPMENT</p>
 
-                <h3 class="work-card-title">
-                  Brawl Watch
-                </h3>
+                <div class="home-work-title-row">
+                  <h3 class="work-card-title">Brawl Watch</h3>
+                  <span class="home-work-arrow" aria-hidden="true">↗</span>
+                </div>
 
                 <p class="work-card-description">
-                  Brawl Starsをより楽しむために制作している
-                  個人開発プロジェクト。
+                  Brawl Starsのクラブメンバー情報やトロフィーの変化、
+                  キャラクター別ランキングを確認するための個人開発アプリ。
                 </p>
 
-                <ul class="tag-list" aria-label="使用技術">
-                  <li>Personal App</li>
-                  <li>Game</li>
+                <ul class="tag-list" aria-label="プロジェクト分類">
+                  <li>Brawl Stars</li>
+                  <li>Club Management</li>
+                  <li>Personal Development</li>
                 </ul>
 
-                <span class="work-card-more">
-                  詳しく見る →
-                </span>
+                <span class="work-card-more">詳しく見る →</span>
               </div>
-
             </a>
           </article>
 
@@ -337,7 +358,7 @@
             <p class="skills-home-description">
               PHPを中心としたWebシステムの開発・改修を得意としています。
               予約システムなどのWebサービスで、
-              機能追加や既存機能の改修を経験してきました。
+              新規機能の実装や既存機能の改修、外部サービス連携などを経験してきました。
             </p>
           </div>
 
@@ -415,7 +436,8 @@
 
             <p class="contact-home-description">
               大阪を拠点に、リモート中心で活動しています。
-              必要に応じて全国への出張にも対応しています。
+              2026年10月よりフリーランスエンジニアとして活動し、
+              必要に応じて全国への出張にも対応します。
             </p>
 
             <ul class="work-style-list">
