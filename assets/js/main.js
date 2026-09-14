@@ -388,3 +388,80 @@ if (githubCard) {
   }, { threshold: 0.2 });
   githubObserver.observe(githubCard);
 }
+
+/* ==================================================
+   SKILLS PAGE
+   Add this to assets/js/main.js AFTER observeOnce() is defined.
+================================================== */
+
+const skillsPageHero = document.querySelector('.skills-page-hero');
+const skillsCoreMap = document.querySelector('.skills-core-map');
+const skillsCoreBranches = document.querySelectorAll('.skills-core-branch');
+const skillsCapabilityItems = document.querySelectorAll('.skills-capability-item');
+const skillsStackGroups = document.querySelectorAll('.skills-stack-group');
+const skillsExperienceItems = document.querySelectorAll('.skills-experience-map-item');
+const skillsSideCards = document.querySelectorAll('.skills-side-card');
+const skillsContactCard = document.querySelector('.skills-contact-card');
+
+if (skillsPageHero) {
+  requestAnimationFrame(() => {
+    skillsPageHero.classList.add('is-visible');
+  });
+}
+
+if (skillsCoreMap) {
+  const skillsCoreObserver = new IntersectionObserver(
+    ([entry], observer) => {
+      if (!entry.isIntersecting) return;
+
+      skillsCoreMap.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    },
+    {
+      threshold: 0.2
+    }
+  );
+
+  skillsCoreObserver.observe(skillsCoreMap);
+}
+
+observeOnce(skillsCoreBranches, {
+  threshold: 0.2,
+  delay: 90
+});
+
+observeOnce(skillsCapabilityItems, {
+  threshold: 0.2,
+  delay: 90
+});
+
+observeOnce(skillsStackGroups, {
+  threshold: 0.16,
+  delay: 80
+});
+
+observeOnce(skillsExperienceItems, {
+  threshold: 0.2,
+  delay: 90
+});
+
+observeOnce(skillsSideCards, {
+  threshold: 0.2,
+  delay: 120
+});
+
+if (skillsContactCard) {
+  const skillsContactObserver = new IntersectionObserver(
+    ([entry], observer) => {
+      if (!entry.isIntersecting) return;
+
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    },
+    {
+      threshold: 0.2
+    }
+  );
+
+  skillsContactObserver.observe(skillsContactCard);
+}
