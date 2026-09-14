@@ -619,3 +619,50 @@ if (skillsContactCard) {
     }
   }
 })();
+
+/* ==================================================
+   CLICK STAR EFFECT
+================================================== */
+
+document.addEventListener('click', (event) => {
+  const target = event.target.closest(
+    'a, button, .btn, .button, .contact-direct-link'
+  );
+
+  if (!target) return;
+
+  const stars = ['★', '☆', '✦', '✧'];
+
+  for (let i = 0; i < 7; i++) {
+    const star = document.createElement('span');
+
+    star.className = 'click-star';
+    star.textContent =
+      stars[Math.floor(Math.random() * stars.length)];
+
+    star.style.left = `${event.clientX}px`;
+    star.style.top = `${event.clientY}px`;
+
+    const angle = Math.random() * Math.PI * 2;
+    const distance = 28 + Math.random() * 38;
+
+    const x = Math.cos(angle) * distance;
+    const y = Math.sin(angle) * distance;
+
+    star.style.setProperty('--x', `${x}px`);
+    star.style.setProperty('--y', `${y}px`);
+    star.style.setProperty(
+      '--rotate',
+      `${Math.random() * 180 - 90}deg`
+    );
+
+    star.style.fontSize =
+      `${10 + Math.random() * 8}px`;
+
+    document.body.appendChild(star);
+
+    star.addEventListener('animationend', () => {
+      star.remove();
+    });
+  }
+});
