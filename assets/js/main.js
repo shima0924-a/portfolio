@@ -241,3 +241,113 @@ if (reduceMotion.matches) {
       element.classList.add('is-visible');
     });
 }
+
+/* ==================================================
+   HOME - Hero
+================================================== */
+
+const heroLabel = document.querySelector('.hero-label');
+const heroTitle = document.querySelector('.hero-title');
+const heroProfile = document.querySelector('.hero-profile');
+const heroDescription = document.querySelector('.hero-description');
+const heroActions = document.querySelector('.hero-actions');
+const heroVisual = document.querySelector('.hero-visual');
+
+const heroElements = [
+  heroLabel,
+  heroTitle,
+  heroProfile,
+  heroDescription,
+  heroActions,
+  heroVisual
+].filter(Boolean);
+
+if (heroElements.length) {
+  window.addEventListener('load', () => {
+    heroElements.forEach((element, index) => {
+      setTimeout(() => {
+        element.classList.add('is-visible');
+      }, index * 120);
+    });
+  });
+}
+
+
+/* ==================================================
+   HOME - About
+================================================== */
+
+const aboutHomeMain = document.querySelector('.about-home-main');
+const aboutHomeInterests = document.querySelector('.about-home-interests');
+
+observeOnce(
+  [aboutHomeMain, aboutHomeInterests].filter(Boolean),
+  {
+    threshold: 0.2,
+    delay: 150
+  }
+);
+
+
+/* ==================================================
+   HOME - Works
+================================================== */
+
+const homeWorkItems = document.querySelectorAll('.home-work-item');
+
+observeOnce(homeWorkItems, {
+  threshold: 0.2,
+  delay: 120
+});
+
+
+/* ==================================================
+   HOME - Skills
+================================================== */
+
+const skillsHomeMain = document.querySelector('.skills-home-main');
+const skillSummaries = document.querySelectorAll('.skill-summary');
+
+if (skillsHomeMain) {
+  const skillsMainObserver = new IntersectionObserver(
+    ([entry], observer) => {
+      if (!entry.isIntersecting) return;
+
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    },
+    {
+      threshold: 0.25
+    }
+  );
+
+  skillsMainObserver.observe(skillsHomeMain);
+}
+
+observeOnce(skillSummaries, {
+  threshold: 0.2,
+  delay: 90
+});
+
+
+/* ==================================================
+   HOME - Contact
+================================================== */
+
+const contactHome = document.querySelector('.contact-home');
+
+if (contactHome) {
+  const contactHomeObserver = new IntersectionObserver(
+    ([entry], observer) => {
+      if (!entry.isIntersecting) return;
+
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    },
+    {
+      threshold: 0.2
+    }
+  );
+
+  contactHomeObserver.observe(contactHome);
+}

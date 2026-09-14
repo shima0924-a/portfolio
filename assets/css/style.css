@@ -4050,3 +4050,208 @@ button {
     transition: none !important;
   }
 }
+
+/* ==================================================
+   HOME ANIMATION
+================================================== */
+
+
+/* ------------------------------
+   Hero
+------------------------------ */
+
+.hero-label,
+.hero-title,
+.hero-profile,
+.hero-description,
+.hero-actions,
+.hero-visual {
+  opacity: 0;
+  transform: translateY(20px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(.22, 1, .36, 1);
+}
+
+.hero-label.is-visible,
+.hero-title.is-visible,
+.hero-profile.is-visible,
+.hero-description.is-visible,
+.hero-actions.is-visible,
+.hero-visual.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-visual {
+  transform:
+    translateY(20px)
+    scale(0.97);
+}
+
+.hero-visual.is-visible {
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+
+/* ------------------------------
+   About
+------------------------------ */
+
+.about-home-main {
+  opacity: 0;
+  transform: translateX(-24px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(.22, 1, .36, 1);
+}
+
+.about-home-main.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.about-home-interests {
+  opacity: 0;
+  transform:
+    translateX(24px)
+    scale(0.98);
+
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(.22, 1, .36, 1);
+}
+
+.about-home-interests.is-visible {
+  opacity: 1;
+  transform:
+    translateX(0)
+    scale(1);
+}
+
+
+/* ------------------------------
+   Works
+------------------------------ */
+
+.home-work-item {
+  opacity: 0;
+  transform: translateY(26px);
+
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s cubic-bezier(.22, 1, .36, 1);
+}
+
+.home-work-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.home-work-link {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.home-work-link:hover {
+  transform: translateY(-5px);
+}
+
+
+/* ------------------------------
+   Skills
+------------------------------ */
+
+.skills-home-main {
+  opacity: 0;
+  transform: translateX(-20px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(.22, 1, .36, 1);
+}
+
+.skills-home-main.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.skill-summary {
+  opacity: 0;
+  transform: translateX(18px);
+
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s cubic-bezier(.22, 1, .36, 1);
+}
+
+.skill-summary.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* ------------------------------
+   Contact
+------------------------------ */
+
+.contact-home {
+  opacity: 0;
+  transform: translateY(28px);
+
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(.22, 1, .36, 1);
+}
+
+.contact-home.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ------------------------------
+   Reduce Motion
+------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-label,
+  .hero-title,
+  .hero-profile,
+  .hero-description,
+  .hero-actions,
+  .hero-visual,
+  .about-home-main,
+  .about-home-interests,
+  .home-work-item,
+  .skills-home-main,
+  .skill-summary,
+  .contact-home {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .hero-image-frame {
+    animation: heroFloat 5s ease-in-out infinite;
+  }
+
+  @keyframes heroFloat {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+}
