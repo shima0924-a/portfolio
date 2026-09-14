@@ -465,3 +465,157 @@ if (skillsContactCard) {
 
   skillsContactObserver.observe(skillsContactCard);
 }
+
+/* ==================================================
+   CONTACT EDITORIAL PAGE
+================================================== */
+
+(() => {
+  /**
+   * 要素が画面内に入ったら一度だけ表示する
+   */
+  const observeContactItems = (
+    elements,
+    {
+      threshold = 0.2,
+      delay = 0
+    } = {}
+  ) => {
+    const items = Array.from(elements);
+
+    if (!items.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          const index = items.indexOf(entry.target);
+
+          setTimeout(() => {
+            entry.target.classList.add('is-visible');
+          }, Math.max(index, 0) * delay);
+
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold
+      }
+    );
+
+    items.forEach((item) => {
+      observer.observe(item);
+    });
+  };
+
+
+  /* -----------------------------------------------
+     HERO
+     イラストをページ表示後にふわっと表示
+  ------------------------------------------------ */
+
+  const heroVisual =
+    document.querySelector('.contact-editorial-visual');
+
+  if (heroVisual) {
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        heroVisual.classList.add('is-visible');
+      }, 180);
+    });
+  }
+
+
+  /* -----------------------------------------------
+     CONSULTATION
+     相談内容を順番に表示
+  ------------------------------------------------ */
+
+  const consultItems =
+    document.querySelectorAll('.contact-consult-item');
+
+  observeContactItems(consultItems, {
+    threshold: 0.18,
+    delay: 90
+  });
+
+
+  /* -----------------------------------------------
+     WORK STYLE
+     OSAKA → REMOTE → NATIONWIDE
+  ------------------------------------------------ */
+
+  const workRoute =
+    document.querySelector('.contact-workstyle-route');
+
+  if (workRoute) {
+    const workRouteObserver = new IntersectionObserver(
+      ([entry], observer) => {
+        if (!entry.isIntersecting) return;
+
+        workRoute.classList.add('is-visible');
+
+        const workItems =
+          workRoute.querySelectorAll('article');
+
+        workItems.forEach((item, index) => {
+          setTimeout(() => {
+            item.classList.add('is-visible');
+          }, index * 140);
+        });
+
+        observer.unobserve(entry.target);
+      },
+      {
+        threshold: 0.2
+      }
+    );
+
+    workRouteObserver.observe(workRoute);
+  }
+
+
+  /* -----------------------------------------------
+     MESSAGE
+     最後のメッセージをふわっと表示
+  ------------------------------------------------ */
+
+  const message =
+    document.querySelectorAll(
+      '.contact-message-editorial'
+    );
+
+  observeContactItems(message, {
+    threshold: 0.2
+  });
+
+
+  /* -----------------------------------------------
+     アニメーションを減らす設定への対応
+  ------------------------------------------------ */
+
+  const reduceMotion =
+    window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    );
+
+  if (reduceMotion.matches) {
+    document
+      .querySelectorAll(
+        `
+        .contact-editorial-visual,
+        .contact-consult-item,
+        .contact-workstyle-route article,
+        .contact-message-editorial
+        `
+      )
+      .forEach((item) => {
+        item.classList.add('is-visible');
+      });
+
+    if (workRoute) {
+      workRoute.classList.add('is-visible');
+    }
+  }
+})();
