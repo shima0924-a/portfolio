@@ -4255,3 +4255,38 @@ button {
     }
   }
 }
+
+/* WORKS PAGE - animation / polish
+   Add to the end of assets/css/style.css */
+
+.works-hero-word span {display:block;opacity:0;transform:translateX(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
+.works-page-hero.is-visible .works-hero-word span {opacity:1;transform:translateX(0)}
+.works-page-hero.is-visible .works-hero-word span:nth-child(1){transition-delay:.15s}
+.works-page-hero.is-visible .works-hero-word span:nth-child(2){transition-delay:.28s}
+.works-page-hero.is-visible .works-hero-word span:nth-child(3){transition-delay:.41s}
+
+.works-page-card{opacity:0;transition:opacity .8s ease,transform .8s cubic-bezier(.22,1,.36,1)}
+.works-page-card:nth-child(odd){transform:translateX(-32px)}
+.works-page-card:nth-child(even){transform:translateX(32px)}
+.works-page-card.is-visible{opacity:1;transform:translateX(0)}
+.works-page-card-link{transition:transform .35s ease,box-shadow .35s ease}
+.works-page-card-link:hover{transform:translateY(-7px)}
+.works-page-project-icon{transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.works-page-card-link:hover .works-page-project-icon{transform:scale(1.05) rotate(-2deg)}
+.works-page-arrow{transition:transform .3s ease}
+.works-page-card-link:hover .works-page-arrow{transform:translateX(5px)}
+
+.development-process{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px}
+.development-process::before{content:"";position:absolute;top:35px;left:8%;width:84%;height:1px;background:var(--color-border);transform:scaleX(0);transform-origin:left;transition:transform 1.4s cubic-bezier(.22,1,.36,1)}
+.development-process.is-visible::before{transform:scaleX(1)}
+.process-card{position:relative;background:transparent;border:0;padding:0 28px 0 0;opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
+.process-card::before{content:"";width:10px;height:10px;display:block;margin-bottom:28px;border-radius:50%;background:var(--color-text);transform:scale(0);transition:transform .4s cubic-bezier(.22,1.4,.36,1)}
+.process-card.is-visible{opacity:1;transform:translateY(0)}
+.process-card.is-visible::before{transform:scale(1)}
+
+.github-card{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,1,.36,1)}
+.github-card.is-visible{opacity:1;transform:translateY(0)}
+
+@media (max-width:768px){.works-page-card:nth-child(odd),.works-page-card:nth-child(even){transform:translateY(24px)}.works-page-card.is-visible{transform:translateY(0)}.development-process{grid-template-columns:1fr;gap:32px;padding-left:28px}.development-process::before{top:0;left:4px;width:1px;height:100%;transform:scaleY(0);transform-origin:top}.development-process.is-visible::before{transform:scaleY(1)}.process-card{padding:0}.process-card::before{position:absolute;left:-28px;top:7px;margin:0}}
+
+@media (prefers-reduced-motion:reduce){.works-hero-word span,.works-page-card,.works-page-card-link,.works-page-project-icon,.works-page-arrow,.development-process::before,.process-card,.process-card::before,.github-card{transition:none!important;animation:none!important}.works-hero-word span,.works-page-card,.process-card,.github-card{opacity:1!important;transform:none!important}.development-process::before,.process-card::before{transform:none!important}}

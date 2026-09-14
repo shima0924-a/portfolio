@@ -351,3 +351,40 @@ if (contactHome) {
 
   contactHomeObserver.observe(contactHome);
 }
+
+/* WORKS PAGE
+   Add to assets/js/main.js after observeOnce() is defined. */
+
+const worksHero = document.querySelector('.works-page-hero');
+const worksPageCards = document.querySelectorAll('.works-page-card');
+const developmentProcess = document.querySelector('.development-process');
+const processCards = document.querySelectorAll('.process-card');
+const githubCard = document.querySelector('.github-card');
+
+if (worksHero) {
+  requestAnimationFrame(() => {
+    worksHero.classList.add('is-visible');
+  });
+}
+
+observeOnce(worksPageCards, { threshold: 0.2, delay: 120 });
+
+if (developmentProcess) {
+  const processObserver = new IntersectionObserver(([entry], observer) => {
+    if (!entry.isIntersecting) return;
+    developmentProcess.classList.add('is-visible');
+    observer.unobserve(entry.target);
+  }, { threshold: 0.2 });
+  processObserver.observe(developmentProcess);
+}
+
+observeOnce(processCards, { threshold: 0.2, delay: 120 });
+
+if (githubCard) {
+  const githubObserver = new IntersectionObserver(([entry], observer) => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('is-visible');
+    observer.unobserve(entry.target);
+  }, { threshold: 0.2 });
+  githubObserver.observe(githubCard);
+}
