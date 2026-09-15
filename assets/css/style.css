@@ -5598,12 +5598,11 @@ button {
   }
 
   .contact-editorial-copy h1 {
-    font-size:
-      clamp(
-        2.7rem,
-        12vw,
-        4rem
-      );
+    font-size: clamp(2.5rem, 10vw, 3.4rem);
+    line-height: 1.25;
+    white-space: normal;
+    word-break: keep-all;
+    overflow-wrap: normal;
   }
 
   .contact-editorial-lead {
@@ -5662,14 +5661,10 @@ button {
     gap: 40px;
   }
 
-  .contact-workstyle-copy h2 {
-    font-size:
-      clamp(
-        2rem,
-        9vw,
-        3rem
-      );
-  }
+.contact-workstyle-copy h2 {
+  font-size: clamp(1.9rem, 8vw, 2.7rem);
+  line-height: 1.5;
+}
 
   .contact-workstyle-route {
     grid-template-columns: 1fr;

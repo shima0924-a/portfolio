@@ -483,7 +483,9 @@
   }
 
   .hero-title {
-    font-size: clamp(2.6rem, 14vw, 3.7rem);
+    font-size: clamp(2.4rem, 11.5vw, 3.2rem);
+    line-height: 1.2;
+    word-break: keep-all;
   }
 
   .hero-image-frame {
