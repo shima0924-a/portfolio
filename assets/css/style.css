@@ -3619,6 +3619,113 @@ button {
   }
 }
 
+/* =========================
+   Works - Very Small Mobile
+========================= */
+
+@media (max-width: 360px) {
+
+  /* ページ上部 */
+  .works-page-hero {
+    padding-top: 32px;
+    padding-bottom: 52px;
+  }
+
+  .works-hero-word {
+    font-size: 2.7rem;
+  }
+
+
+  /* 作品一覧 */
+  .works-page-grid {
+    gap: 16px;
+  }
+
+  .works-page-card {
+    border-radius: 20px;
+  }
+
+  .works-page-card-content {
+    padding: 18px;
+  }
+
+  .works-page-card-top {
+    gap: 12px;
+  }
+
+  .works-page-title {
+    font-size: 1.3rem;
+  }
+
+  .works-page-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  .works-page-description {
+    margin-top: 14px;
+    font-size: 0.86rem;
+    line-height: 1.75;
+  }
+
+  .works-page-point {
+    margin-top: 18px;
+    padding-top: 16px;
+  }
+
+  .works-page-point-text {
+    font-size: 0.82rem;
+    line-height: 1.7;
+  }
+
+
+  /* 制作するときに考えていること */
+  .development-process {
+    gap: 0;
+  }
+
+  .process-card {
+    padding: 18px 18px 24px;
+  }
+
+  .process-number {
+    font-size: 2.1rem;
+  }
+
+  .process-en {
+    margin-top: 12px;
+  }
+
+  .process-title {
+    font-size: 1.05rem;
+  }
+
+  .process-text {
+    margin-top: 10px;
+    font-size: 0.84rem;
+    line-height: 1.7;
+  }
+
+
+  /* GitHub */
+  .github-card {
+    padding: 26px 18px;
+    gap: 20px;
+    border-radius: 20px;
+  }
+
+  .github-card-title {
+    font-size: 1.7rem;
+  }
+
+  .github-card-text {
+    margin-top: 16px;
+    font-size: 0.86rem;
+  }
+
+}
+
 .values-layout {
   display: grid;
   grid-template-columns: 0.75fr 1.4fr;

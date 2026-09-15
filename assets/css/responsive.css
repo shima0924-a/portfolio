@@ -510,3 +510,479 @@
   }
 
 }
+/* ==================================================
+   WORKS DETAIL / BODYLOG
+   Very Small Mobile - 360px以下
+================================================== */
+
+@media (max-width: 360px) {
+
+  /* ================================================
+     横はみ出し防止
+  ================================================ */
+
+  .project-hero,
+  .project-overview-section,
+  .project-why-section,
+  .project-features-section,
+  .project-thinking-section,
+  .project-tech-section,
+  .project-github-section,
+  .project-next {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .project-hero-inner,
+  .project-hero-content,
+  .project-hero-image,
+  .project-two-column,
+  .project-text,
+  .project-feature-grid,
+  .project-thinking-grid,
+  .project-tech-list,
+  .project-github-card {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+
+  /* ================================================
+     HERO
+  ================================================ */
+
+  .project-hero {
+    padding: 30px 16px 44px;
+  }
+
+  .project-hero-inner {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .project-hero-content {
+    width: 100%;
+  }
+
+  .project-back {
+    font-size: 0.7rem;
+  }
+
+  .project-category {
+    margin-top: 22px;
+
+    font-size: 0.58rem;
+    line-height: 1.5;
+
+    letter-spacing: 0.08em;
+
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+
+  /* ================================================
+     TITLE + APP ICON
+  ================================================ */
+
+  .project-title-row {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-width: 0;
+
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .project-app-icon {
+    width: 50px;
+    height: 50px;
+
+    flex: 0 0 50px;
+
+    border-radius: 14px;
+  }
+
+  .project-title {
+    min-width: 0;
+
+    font-size: 2.2rem;
+    line-height: 1.15;
+
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .project-catch {
+    margin-top: 20px;
+
+    font-size: 1.35rem;
+    line-height: 1.5;
+  }
+
+  .project-description {
+    margin-top: 16px;
+
+    font-size: 0.8rem;
+    line-height: 1.75;
+
+    overflow-wrap: break-word;
+  }
+
+
+  /* ================================================
+     TAG
+  ================================================ */
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 6px;
+    margin-top: 18px;
+  }
+
+  .tag-list li {
+    padding: 4px 8px;
+
+    font-size: 0.6rem;
+
+    white-space: nowrap;
+  }
+
+
+  /* ================================================
+     BODYLOG SCREEN SHOWCASE
+
+     ページ全体ではなく
+     この部分だけ横スクロール
+  ================================================ */
+
+  .project-hero-image {
+    width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+  }
+
+  .bodylog-showcase {
+    display: flex;
+
+    width: 100%;
+    max-width: 100%;
+
+    gap: 10px;
+
+    margin: 0;
+
+    padding: 8px 2px 20px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    box-sizing: border-box;
+
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+  }
+
+  .bodylog-showcase::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bodylog-screen {
+    flex: 0 0 74%;
+
+    width: 74%;
+    max-width: 74%;
+
+    height: auto;
+
+    border-radius: 12px;
+
+    scroll-snap-align: center;
+  }
+
+  .bodylog-screen-main,
+  .bodylog-screen-side {
+    margin: 0 !important;
+
+    opacity: 1;
+
+    transform: none !important;
+  }
+
+
+  /* ================================================
+     COMMON PROJECT SECTION
+  ================================================ */
+
+  .project-overview-section,
+  .project-why-section,
+  .project-features-section,
+  .project-thinking-section,
+  .project-tech-section,
+  .project-github-section {
+    padding-top: 44px;
+    padding-bottom: 44px;
+  }
+
+  .project-two-column {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+    width: 100%;
+  }
+
+  .project-two-column > * {
+    min-width: 0;
+  }
+
+  .project-two-column .section-heading-ja {
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+
+  .project-text {
+    width: 100%;
+  }
+
+  .project-text p {
+    max-width: 100%;
+
+    font-size: 0.8rem;
+    line-height: 1.75;
+
+    overflow-wrap: break-word;
+  }
+
+  .project-text .project-lead {
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+
+
+  /* ================================================
+     FEATURES
+  ================================================ */
+
+  .project-features-section .section-heading {
+    margin-bottom: 18px;
+  }
+
+  .project-feature-grid {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    width: 100%;
+  }
+
+  .project-feature-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+
+    padding: 20px 16px;
+
+    box-sizing: border-box;
+  }
+
+  .project-feature-number {
+    margin-bottom: 12px;
+
+    font-size: 1.4rem;
+  }
+
+  .project-feature-card h3 {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .project-feature-card p:last-child {
+    margin-top: 8px;
+
+    font-size: 0.8rem;
+    line-height: 1.7;
+  }
+
+
+  /* ================================================
+     DESIGN & THINKING
+  ================================================ */
+
+  .project-thinking-section .section-heading {
+    margin-bottom: 18px;
+  }
+
+  .project-thinking-grid {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    width: 100%;
+  }
+
+  .project-thinking-card {
+    width: 100%;
+    min-width: 0;
+
+    padding: 20px 16px;
+
+    box-sizing: border-box;
+  }
+
+  .project-thinking-label {
+    margin-bottom: 8px;
+
+    font-size: 0.58rem;
+  }
+
+  .project-thinking-card h3 {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .project-thinking-card p:last-child {
+    margin-top: 8px;
+
+    font-size: 0.8rem;
+    line-height: 1.7;
+  }
+
+
+  /* ================================================
+     TECHNOLOGY
+  ================================================ */
+
+  .project-tech-list {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .project-tech-row {
+    display: grid;
+
+    /*
+      PC版の180px固定列を解除
+    */
+    grid-template-columns: 88px minmax(0, 1fr);
+
+    gap: 10px;
+
+    width: 100%;
+    min-width: 0;
+
+    padding: 14px 0;
+  }
+
+  .project-tech-row span {
+    min-width: 0;
+
+    font-size: 0.68rem;
+
+    overflow-wrap: anywhere;
+  }
+
+  .project-tech-row strong {
+    min-width: 0;
+
+    font-size: 0.8rem;
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+  }
+
+
+  /* ================================================
+     GITHUB
+  ================================================ */
+
+  .project-github-card {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    width: 100%;
+
+    gap: 20px;
+
+    padding: 24px 18px;
+
+    box-sizing: border-box;
+
+    border-radius: 16px;
+  }
+
+  .project-github-card > div {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .project-github-title {
+    font-size: 1.35rem;
+    line-height: 1.45;
+
+    overflow-wrap: break-word;
+  }
+
+  .project-github-text {
+    margin-top: 10px;
+
+    font-size: 0.78rem;
+    line-height: 1.7;
+  }
+
+  .project-github-card .button {
+    min-height: 44px;
+
+    padding: 0 14px;
+
+    font-size: 0.76rem;
+  }
+
+
+  /* ================================================
+     NEXT PROJECT
+  ================================================ */
+
+  .project-next {
+    overflow: hidden;
+  }
+
+  .project-next-link {
+    width: calc(100% - 32px);
+    max-width: 100%;
+
+    min-height: 130px;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+  }
+
+  .project-next-label {
+    font-size: 0.58rem;
+  }
+
+  .project-next-link strong {
+    font-size: 1.25rem;
+    line-height: 1.4;
+
+    white-space: normal;
+  }
+
+}
